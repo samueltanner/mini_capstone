@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-#product = Product.new(name: "tennis ball", price: "3", img_url: "https://images-na.ssl-images-amazon.com/images/I/61oT0J2ipHL._AC_UL1000_.jpg", description: "a perfect tennis ball for tennis or your dog!")
+#product = Product.create(name: "tennis ball", price: "3", img_url: "https://images-na.ssl-images-amazon.com/images/I/61oT0J2ipHL._AC_UL1000_.jpg", description: "a perfect tennis ball for tennis or your dog!")
 
-product = Product.new(name: "spam", price: "3", img_url: "https://www.spam.com/wp-content/uploads/2019/09/image-product_spam-classic-12oz-420x420.png", description: "You know you want some musubi")
+#product = Product.create(name: "spam", price: "3", img_url: "https://www.spam.com/wp-content/uploads/2019/09/image-product_spam-classic-12oz-420x420.png", description: "You know you want some musubi")
+
+#product = Product.create(name: "computer", price: "3000", img_url: "https://www.zdnet.com/a/hub/i/r/2020/11/16/37e33024-2892-4bb7-9d21-6ac6f7544def/thumbnail/770x433/5f1b7f881bfb80a9f2bbe02bc6d64b49/apple-macbook-pro-m1-2020-5.jpg", description: "A supped up macbook")
