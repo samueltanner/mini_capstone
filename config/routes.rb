@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 
   # EXAMPLE JSON ROUTE WITH API NAMESPACE
   namespace :api do
+
+    ### PRODUCT ROUTES
+
     get "/products" => "products#index"
 
     get "/products/:id" => "products#show" #example as a url segment perameter http://localhost:3000/api/find_product_by_id/1
@@ -13,6 +16,18 @@ Rails.application.routes.draw do
     patch "/products/:id" => "products#update"
 
     delete "/products/:id" => "products#destroy"
+
+    ### SUPPLIERS ROUTES
+
+    get "/suppliers" => "suppliers#index"
+
+    get "/suppliers/:id" => "suppliers#show"
+
+    post "/suppliers" => "suppliers#create"
+
+    patch "/suppliers/:id" => "suppliers#update"
+
+    delete "/suppliers/:id" => "suppliers#destroy"
 
     #get "/most_recent_product" => "products#recent_product"
 

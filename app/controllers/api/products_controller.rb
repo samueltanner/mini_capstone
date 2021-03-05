@@ -1,6 +1,12 @@
 class Api::ProductsController < ApplicationController
   def index
     @products = Product.all
+
+    if params[:search] #this allows the user to search from the index by product NAME, nothing else
+      @products = Product.where("name ILIKE ?", "%#{params[:search]}%")
+    end
+
+    @products = @products.order(price: :asc) #this orders the results by price in ascending order
     render "index.json.jb"
   end
 
@@ -12,27 +18,36 @@ class Api::ProductsController < ApplicationController
 
   def create
     @product = Product.new(
+      supplier_id: params[:supplier_id],
       name: params[:name],
       price: params[:price],
       description: params[:description],
       img_url: params[:img_url],
       inventory: params[:inventory],
     )
-    @product.save
-    render "show.json.jb"
+
+    if @product.save
+      render "show.json.jb"
+    else
+      render json: { errors: @product.errors.full_messages }, status: 406
+    end
   end
 
   def update
     product_id = params[:id]
     @product = Product.find_by(id: product_id) #this needs to be () not []
 
+    @product.supplier_id = params[:supplier_id] || @product.supplier_id
     @product.name = params[:name] || @product.name
     @product.price = params[:price] || @product.price
     @product.description = params[:description] || @product.description
     @product.img_url = params[:img_url] || @product.img_url
 
-    @product.save
-    render "show.json.jb"
+    if @product.save
+      render "show.json.jb"
+    else
+      render json: { errors: @product.errors.full_messages }, status: 406
+    end
   end
 
   def destroy
