@@ -29,6 +29,15 @@ Rails.application.routes.draw do
 
     delete "/suppliers/:id" => "suppliers#destroy"
 
+    ### USER ROUTES
+
+    post "/users" => "users#create"
+
+    ### SESSION ROUTES
+    post "/sessions" => "sessions#create"
+
+
+
     #get "/most_recent_product" => "products#recent_product"
 
     #get "/find_product_by_id" => "products#get_a_product_path" #url as a querey param http://localhost:3000/api/find_product_by_id?product_id=3

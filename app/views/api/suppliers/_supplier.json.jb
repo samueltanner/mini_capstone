@@ -3,6 +3,6 @@
   name: supplier.name,
   email: supplier.email,
   phone_number: supplier.phone_number,
-  supplier: supplier.product,
+#supplier: supplier.product, #How do I get this to display all of the products?
 
 }

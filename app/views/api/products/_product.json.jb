@@ -3,7 +3,8 @@
   name: product.name,
   price: product.price,
   description: product.description,
-  img_url: product.img_url,
+  #img_url: product.img_url,
+  images: product.images,
   formatted: {
     discounted: product.is_discounted?,
     tax: product.tax,
@@ -11,5 +12,7 @@
 
   },
   supplier_id: product.supplier_id,
-  supplier: product.supplier.name,
+  supplier_name: product.supplier.name,
+  supplier_phone: product.supplier.phone_number,
+  supplier_email: product.supplier.email,
 }

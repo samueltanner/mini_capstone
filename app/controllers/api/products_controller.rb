@@ -22,7 +22,7 @@ class Api::ProductsController < ApplicationController
       name: params[:name],
       price: params[:price],
       description: params[:description],
-      img_url: params[:img_url],
+      #img_url: params[:img_url],
       inventory: params[:inventory],
     )
 
@@ -41,7 +41,7 @@ class Api::ProductsController < ApplicationController
     @product.name = params[:name] || @product.name
     @product.price = params[:price] || @product.price
     @product.description = params[:description] || @product.description
-    @product.img_url = params[:img_url] || @product.img_url
+    #@product.img_url = params[:img_url] || @product.img_url
 
     if @product.save
       render "show.json.jb"

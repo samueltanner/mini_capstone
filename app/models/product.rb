@@ -7,6 +7,9 @@ class Product < ApplicationRecord
   # validates :price, presence: true, numericality: { greater_than: 0 }
   # validates :img_url, presence: true, format: { with: /\.(png|jpg)\Z/i }
 
+  belongs_to :supplier #this accomplishes Supplier.find_by(id: supplier_id)
+  has_many :images
+
   def is_discounted?
     price <= 10
   end
@@ -19,7 +22,11 @@ class Product < ApplicationRecord
     price + tax
   end
 
-  def supplier
-    Supplier.find_by(id: supplier_id)
+  # def supplier
+  #   Supplier.find_by(id: supplier_id)
+  # end
+
+  def images
+    Image.where(product_id: id)
   end
 end
