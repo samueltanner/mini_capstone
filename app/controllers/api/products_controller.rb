@@ -1,4 +1,6 @@
 class Api::ProductsController < ApplicationController
+  before_action :authenticate_admin, except: [:index, :show] #only admin can create, update, or destory products. logged in users can index and show
+
   def index
     # if current_user
     #   @products = Product.all
@@ -62,15 +64,4 @@ class Api::ProductsController < ApplicationController
     @product.destroy
     render json: { message: "It was destroyed" }
   end
-
-  # def recent_product
-  #   @product = Product.last
-  #   render "one_product.json.jb"
-  # end
-
-  # def get_a_product_path_query
-  #   id = params[:product_id].to_i
-  #   @product = Product.find_by(id: id)
-  #   render "recent_product.json.jb"
-  # end
 end

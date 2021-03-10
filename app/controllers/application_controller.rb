@@ -23,7 +23,13 @@ class ApplicationController < ActionController::Base
 
   def authenticate_user
     unless current_user
-      render json: {}, status: :unauthorized
+      render json: { message: "You are not logged in" }, status: :unauthorized
+    end
+  end
+
+  def authenticate_admin
+    unless current_user && current_user.admin #both must be true to move forward given boolean logic
+      render json: { message: "You are not an admin" }, status: :unauthorized
     end
   end
 end
