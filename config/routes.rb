@@ -36,7 +36,10 @@ Rails.application.routes.draw do
     ### SESSION ROUTES
     post "/sessions" => "sessions#create"
 
+    ### ORDERS ROUTES
+    post "/orders" => "orders#create"
 
+    get "/orders" => "orders#index"
 
     #get "/most_recent_product" => "products#recent_product"
 

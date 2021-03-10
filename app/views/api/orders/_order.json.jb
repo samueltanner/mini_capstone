@@ -1,0 +1,10 @@
+{
+  username: order.user.name,
+  product_name: order.product.name,
+  quantity: order.quantity,
+  total: total,
+# tax: order.quantity * order.product.tax,
+# total: order.quantity * order.product.price,
+# sub_total: (order.quantity * order.product.tax) + (order.quantity * order.product.price),
+
+}

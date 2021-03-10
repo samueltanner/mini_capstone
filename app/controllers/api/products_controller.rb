@@ -1,5 +1,10 @@
 class Api::ProductsController < ApplicationController
   def index
+    # if current_user
+    #   @products = Product.all
+    # else
+    #   render json: []
+    # end
     @products = Product.all
 
     if params[:search] #this allows the user to search from the index by product NAME, nothing else
