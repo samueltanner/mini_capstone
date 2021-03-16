@@ -2,18 +2,8 @@
   order_id: order.id,
   user_id: order.user_id,
   username: order.user.name,
-  product_name: order.product.name,
-  product_price: order.product.price,
-  quantity: order.quantity,
-  sub_total: order.sub_total,
+  subtotal: order.subtotal,
   tax: order.tax,
   total: order.total,
-# sub_total: order.sub_total,
-# tax: order.tax,
-# total: order.total,
-
-# tax: order.quantity * order.product.tax,
-# total: order.quantity * order.product.price,
-# sub_total: (order.quantity * order.product.tax) + (order.quantity * order.product.price),
 
 }

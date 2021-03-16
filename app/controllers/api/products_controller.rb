@@ -9,11 +9,16 @@ class Api::ProductsController < ApplicationController
     # end
     @products = Product.all
 
-    if params[:search] #this allows the user to search from the index by product NAME, nothing else
-      @products = Product.where("name ILIKE ?", "%#{params[:search]}%")
+    if params[:category] #this allows the user to search from the index by product NAME, nothing else
+      category = Category.find_by(name: params[:category])     # or ("name ILIKE ?", "%#{params[:category]}%") #THIS WILL HANDLE CATEGORIES WITH SPACES
+      @products = category.products
     end
 
-    @products = @products.order(price: :asc) #this orders the results by price in ascending order
+    # if params[:search] #this allows the user to search from the index by product NAME, nothing else
+    #   @products = Product.where("categories.name ILIKE ?", "%#{params[:search]}%")
+    # end
+
+    #@products = @products.order(price: :asc) #this orders the results by price in ascending order
     render "index.json.jb"
   end
 

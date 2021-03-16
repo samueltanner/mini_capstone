@@ -43,8 +43,17 @@ Rails.application.routes.draw do
 
     get "/orders/:id" => "orders#show"
 
+    ### IMAGES ROUTES
+
+    post "/images" => "images#create"
+
     #get "/most_recent_product" => "products#recent_product"
 
     #get "/find_product_by_id" => "products#get_a_product_path" #url as a querey param http://localhost:3000/api/find_product_by_id?product_id=3
+
+    ###CART
+    post "/cart/:product_id" => "carted_products#destroy"
+    post "/cart" => "carted_products#create"
+    get "/cart" => "carted_products#index"
   end
 end

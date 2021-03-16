@@ -5,6 +5,7 @@
   description: product.description,
   #img_url: product.img_url,
   images: product.images,
+  categories: product.categories,
   formatted: {
     discounted: product.is_discounted?,
     tax: product.tax,
