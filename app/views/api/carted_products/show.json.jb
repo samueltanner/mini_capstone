@@ -1,0 +1,1 @@
+render partial: "carted_product.json.jb", locals: { cart: @cart }

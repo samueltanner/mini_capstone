@@ -1,8 +1,3 @@
 @cart.map do |cart|
-  {
-    user_id: cart.user_id,
-    product_id: cart.product_id,
-    quantity: cart.quantity,
-    status: cart.status,
-  }
+  render partial: "carted_product.json.jb", locals: { cart: cart }
 end
